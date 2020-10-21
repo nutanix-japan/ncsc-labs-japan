@@ -1,0 +1,414 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Access Remote Console to System using IPMI and using the Crash Cart Tool</title>
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="AHV Networking" href="../lab2/lab2.html" />
+    <link rel="prev" title="Introduction" href="../index.html" />
+
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+<link href="http://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+  </head><body>
+
+  <div id="navbar" class="navbar-inverse navbar-default ">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html"><span><img src="../_static/NutanixWorkshops.svg"></span>
+           </a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../index.html"> <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><p class="caption"><span class="caption-text">Lab 1</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Access Remote Console to System using IPMI and using the Crash Cart Tool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#using-the-crashcart-network-configuration-command">Using the Crashcart network_configuration Command</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#running-foundation-from-a-cvm">Running Foundation from a CVM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#click-upgrade-from-version-of-aos">1-Click Upgrade from version of AOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#install-foundation-vm-on-your-laptop-optional-reference-lab">Install Foundation VM on your laptop (optional reference lab)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#install-prism-central">Install Prism Central</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#create-an-as-built-guide">Create an As Built Guide</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Lab 2</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../lab2/lab2.html">AHV Networking</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../lab2/lab2.html#changing-network-bond-modes-in-ahv">Changing Network Bond modes in AHV</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lab2/lab2.html#changing-bond-from-active-backup-to-balance-slb">Changing Bond from Active/backup to balance-slb</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Appendix</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../appendix/all_host_ssh.html">Generic AHV/ESX and CVM Commands Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../appendix/glossary.html">Glossary</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/glossary.html#nutanix-core">Nutanix Core</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../appendix/glossary.html#aos">AOS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../appendix/glossary.html#pulse">Pulse</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../appendix/glossary.html#prism-element">Prism Element</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../appendix/glossary.html#prism-central">Prism Central</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../appendix/glossary.html#node">Node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../appendix/glossary.html#block">Block</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../appendix/glossary.html#storage-pool">Storage Pool</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../appendix/glossary.html#storage-container">Storage Container</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../appendix/glossary.html#anatomy-of-a-read-i-o">Anatomy of a Read I/O</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../appendix/glossary.html#anatomy-of-a-write-i-o">Anatomy of a Write I/O</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/glossary.html#nutanix-karbon">Nutanix Karbon</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><p class="caption"><span class="caption-text">Lab 1</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Access Remote Console to System using IPMI and using the Crash Cart Tool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#using-the-crashcart-network-configuration-command">Using the Crashcart network_configuration Command</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#running-foundation-from-a-cvm">Running Foundation from a CVM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#click-upgrade-from-version-of-aos">1-Click Upgrade from version of AOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#install-foundation-vm-on-your-laptop-optional-reference-lab">Install Foundation VM on your laptop (optional reference lab)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#install-prism-central">Install Prism Central</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#create-an-as-built-guide">Create an As Built Guide</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Lab 2</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../lab2/lab2.html">AHV Networking</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Appendix</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../appendix/all_host_ssh.html">Generic AHV/ESX and CVM Commands Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../appendix/glossary.html">Glossary</a></li>
+</ul>
+
+        </div>
+      </div>
+    <div class="col-md-9 content">
+      
+  <div class="admonition note" id="lab1">
+<p class="first admonition-title">Note</p>
+<p class="last">Due to Covid-19, Remote Installations are now being done with the majority of our customers.  This can be done in a few ways.  The remote installation workflow is different but can be simplified by manually setting the node IPs.  Because manually setting the node IPs covers a much broader situations we will be focusing on these stepsin the Labs.  Rack and stack and setting the IPMI IPs via BIOS or ipmitool commandwill have to be done by someone ahead of timein order for you to have access to these systemsremotely.Note: Theremote installation steps are also used for node models that do not have 1Gb portsor dark sites.</p>
+</div>
+<div class="section" id="access-remote-console-to-system-using-ipmi-and-using-the-crash-cart-tool">
+<h1>Access Remote Console to System using IPMI and using the Crash Cart Tool<a class="headerlink" href="#access-remote-console-to-system-using-ipmi-and-using-the-crash-cart-tool" title="Permalink to this headline">¶</a></h1>
+<ol class="arabic">
+<li><p class="first">Open a web browser to your IPMI IP: <code class="docutils literal notranslate"><span class="pre">http://&lt;IPMI</span> <span class="pre">IP&gt;</span></code> USE YOUR ASSIGNED NODE(S)</p>
+<ul class="simple">
+<li>User: ADMIN</li>
+<li>Password :ADMIN</li>
+</ul>
+</li>
+<li><p class="first">Click Remote Console</p>
+<img alt="../_images/ncsc-1.png" src="../_images/ncsc-1.png" />
+</li>
+<li><p class="first">Click iKVM/HTML5 to get to the console of the node (AHV)</p>
+</li>
+<li><p class="first">Login with your AHV Host “root” user lab assigned password</p>
+</li>
+<li><p class="first">To login to the local CVM use the internal IP</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ssh nutanix@192.168.5.2
+</pre></div>
+</div>
+</li>
+<li><p class="first">Login with your CVM lab assigned password</p>
+</li>
+<li><p class="first">From <strong>NODE A</strong> only, for team labs only one person should do this step) Since these labs are provided already installed, we want to put the system into a similar state to when they are out of the factory.  To do so run the following commands:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cluster status <span class="c1"># shows you the status of your cluster. In our lab the cluster is UP</span>
+cluster stop <span class="c1"># this will disable the cluster</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>If VMs are online you must shut them down use the following commands:</p>
+<div class="last highlight-bash notranslate"><div class="highlight"><pre><span></span>acli vm_list  <span class="c1">#gets the list of vms</span>
+acli vm.force_off &lt;name of VM&gt; <span class="c1">#forcefully shuts down VM</span>
+</pre></div>
+</div>
+</div>
+</li>
+<li><p class="first">Execute the following command to destroy the cluster configurations – removes all CVM’s services from the cluster. This is to put our labs in out of factory state.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cluster destroy
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This is destructive to existing production data.  You would not want to do this command unless you are prepared to lose your data still on a cluster.</p>
+</div>
+</li>
+<li><p class="first">Run the command to confirm if the Cluster is currently unconfigured</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cluster status
+<span class="nb">exit</span> <span class="c1"># to exit the CVM and go back to AHV prompt for next lab</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>If cluster completes and still showing as still part of a cluster you can manually set  it on each node individually with the following commands:</p>
+<div class="last highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> /homes/nutanix
+touch .node_unconfigure
+genesis restart
+</pre></div>
+</div>
+</div>
+</li>
+</ol>
+</div>
+<div class="section" id="using-the-crashcart-network-configuration-command">
+<h1>Using the Crashcart network_configuration Command<a class="headerlink" href="#using-the-crashcart-network-configuration-command" title="Permalink to this headline">¶</a></h1>
+<p>In a remote install or deployment the IPMI was set ahead of time for remote access this command will now be use to set the HOST and CVM IP as well as Network settings.</p>
+<ol class="arabic">
+<li><p class="first">Continued from the previous console we can run the following commands:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cp ~/firstboot/fc_progress.py ~/nutanix-network-crashcart/” <span class="c1"># This file is missing in the crashcart path and has been fixed in future releases 5.16.1+</span>
+<span class="nb">cd</span> /root/nutanix-network-crashcart/”  <span class="c1"># change directory to crashcart folder</span>
+./network_configuration” <span class="c1"># opens up Nutanix Network Configuration</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Note the network changes available to you on this local system</p>
+<img alt="../_images/ncsc-2.png" src="../_images/ncsc-2.png" />
+</li>
+<li><p class="first">For this lab let’s choose “Cancel” as the IPs are already set</p>
+</li>
+<li><p class="first">You can now “exit” and close your remote console</p>
+</li>
+</ol>
+</div>
+<div class="section" id="running-foundation-from-a-cvm">
+<h1>Running Foundation from a CVM<a class="headerlink" href="#running-foundation-from-a-cvm" title="Permalink to this headline">¶</a></h1>
+<ol class="arabic">
+<li><p class="first">Open a web browser to your CVM IP: <code class="docutils literal notranslate"><span class="pre">http://&lt;CVM</span> <span class="pre">IP:8000&gt;</span></code>  use your assigned CVM’s IP</p>
+</li>
+<li><p class="first">In Page 1, Start fill form with your Assigned lab Network IP settings provided and hit <strong>Next</strong></p>
+</li>
+<li><p class="first">In Page 2, Nodes section, notice that your remaining nodes are detected.  As they are previously configured the IPs autofilled but normally out of factory they will require you put your desired IPs.  <strong>ONLY SELECT YOUR NODE IN THIS LAB</strong></p>
+</li>
+<li><p class="first">We will be making a single node cluster.  Give it a Host name of <code class="docutils literal notranslate"><span class="pre">HOST-&lt;initials&gt;</span></code></p>
+</li>
+<li><p class="first">On Page 3. Cluster page, let’s choose to <strong>Skip automatic cluster formation</strong> and give it 24GB of memory and hit <strong>Next</strong>.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Only a select few models are supported in Single-node cluster in foundation we will use <strong>Skip</strong> and do this manually since we do not have any single node models in the labs.</p>
+</div>
+</li>
+<li><p class="first">On Page 4. AOS we will keep the default factory imaged software “we will skip AOS installation” and hit <strong>Next</strong></p>
+</li>
+<li><p class="first">On Page 5. Hypervisor same as previous step we will skip re-imaging and hit <strong>Next</strong></p>
+</li>
+<li><p class="first">On Page 6. IPMI only on bare-metal installation you would you need this step.  When using the factory image we can skip this and hit <strong>Start</strong></p>
+</li>
+<li><p class="first">Explore Logs to see live scripts running from Foundation</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Estimated time 1-5 minutes to complete</p>
+</div>
+</li>
+<li><p class="first">We will now bring up your node as a single node cluster</p>
+</li>
+<li><p class="first">Login to CVM again via SSH and run the following command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cluster -s &lt;cvm_ip&gt; --cluster_function_list<span class="o">=</span>one_node_cluster create
+</pre></div>
+</div>
+</li>
+<li><p class="first">When completed, open a web browser to CVM IP: <code class="docutils literal notranslate"><span class="pre">http://&lt;Cluster_IP&gt;</span></code></p>
+</li>
+<li><p class="first">Use the following user name and password provided in the lab.  (You may change the password to one you’d like to use)</p>
+<ul class="simple">
+<li>User: admin</li>
+<li>Password: Nutanix/4u</li>
+</ul>
+</li>
+</ol>
+</div>
+<div class="section" id="click-upgrade-from-version-of-aos">
+<h1>1-Click Upgrade from version of AOS<a class="headerlink" href="#click-upgrade-from-version-of-aos" title="Permalink to this headline">¶</a></h1>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">To determine the proper upgrade path from your current release to the target release, please check this link: <a class="reference external" href="https://portal.nutanix.com/#/page/upgradePaths">https://portal.nutanix.com/#/page/upgradePaths</a></p>
+</div>
+<ol class="arabic">
+<li><p class="first">In Prism Element.  Click the Gear Icon again</p>
+</li>
+<li><p class="first">Choose <strong>Upgrade software</strong></p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This will and detect online if there is a later version of the LTS or STS version of AOS currently running in the cluster.  If you want to go from change between LTS and STS you may have to up load the binaries manually.  IMPORTANT: To determine the proper upgrade path from your current release to the target release, please check this link: <a class="reference external" href="https://portal.nutanix.com/#/page/upgradePaths">https://portal.nutanix.com/#/page/upgradePaths</a></p>
+</div>
+</li>
+<li><p class="first">Download the required files.  To manually download the software files are available on <a class="reference external" href="http://portal.nutanix.com">http://portal.nutanix.com</a></p>
+</li>
+<li><p class="first">Click <strong>Upgrade</strong> then <strong>Upgrade Now</strong></p>
+</li>
+<li><p class="first">Notice you can click <strong>Close</strong> and go to tasks and watch all the detailed tasks running in the background</p>
+</li>
+</ol>
+</div>
+<div class="section" id="install-foundation-vm-on-your-laptop-optional-reference-lab">
+<h1>Install Foundation VM on your laptop (optional reference lab)<a class="headerlink" href="#install-foundation-vm-on-your-laptop-optional-reference-lab" title="Permalink to this headline">¶</a></h1>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This is an important lab to understand bare-metal and we run through these steps with our Remote Labs due to network accessibility.   Use this lab as a reference lab.  When you would need to bare-metal or image a single node you will have to use Foundation VM or Portable Foundation.</p>
+</div>
+<p>Downloading the needed Foundation &amp; AOS:</p>
+<ol class="arabic simple">
+<li>Open a web browser and log in to the Nutanix Support portal: <a class="reference external" href="http://portal.nutanix.com">http://portal.nutanix.com</a></li>
+<li>Download Foundation VM</li>
+<li>You will also need to download an AOS/AHV bundle</li>
+<li>Extract Tar (7 zip) and import <code class="docutils literal notranslate"><span class="pre">Foundation_VM-4.5.2.ovf</span></code> file into VirtualBox</li>
+<li>Launch VM verify networking is bridged (See also Appendix files for further assistance with Oracle Virtual Box and VMware Workstation)</li>
+<li>Set the IP by clicking the set_foundation_ip_address Icon – use an IP within the CVM/Host network</li>
+<li>Use your laptop internet browser to browse to the IP set in previous step – IP on Laptop from the IP table (NOTE: Alternately You could use the icon “Nutanix Foundation” on the VM desktop but will have lower resolution and not be able to upload file from the browser from your laptop)</li>
+<li>Out of the factory you would see the nodes in the Discovery pane under the <strong>2. Nodes</strong> section.  If you are seeing discovered nodes you can skip the next step.  However in our labs the blocks most likely were not left in an “out of factory” state and you will need to do the BareMetal steps below</li>
+<li>To start bare-metal steps, click “Reach more nodes by manually entering the MAC Addresses.  You can get MAC from sticker on the back of each node.  The other option to use the IPMI IPs can be used if you are able to set those before Foundation the server.</li>
+</ol>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last"><strong>Software Only</strong> system will come with nothing pre-installed you must to use these bare-metal steps.  In the same fashion, you can not auto-discover any of your nodes if it is part of a cluster.</p>
+</div>
+</div>
+<div class="section" id="install-prism-central">
+<h1>Install Prism Central<a class="headerlink" href="#install-prism-central" title="Permalink to this headline">¶</a></h1>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Setup storage container RF2 all the defaults name it <strong>YOUR INITALS&gt;-VMs</strong></p>
+</div>
+<ol class="arabic simple">
+<li>From Prism Element Home dashboard you can choose <strong>Create new</strong> under Prism Central</li>
+<li>Choose to <strong>Deploy New Prism Central Instance</strong></li>
+<li>Choose <strong>Download</strong> of the latest version</li>
+<li>Choose to <strong>Install Single-VM Prism Central</strong>  and click on <strong>Deploy 1-VM PC</strong></li>
+<li>Give this VM a name <em>&lt;YOUR INTIALS&gt;-***PC*</em></li>
+<li>Choose the container you created <strong>VMs</strong></li>
+<li>Choose <strong>VM Sizing</strong> as <strong>Small</strong></li>
+<li>Give the Prism Central server an IP using your IP network first octets and use <em>X.X.X.39</em>  in the created native <em>VLAN 0</em></li>
+<li>Once Prism Central server is successfully deployed (you can monitor the deployment in <strong>Home &gt; Tasks</strong> Browse to the Prism Central IP and login</li>
+<li>Verify your host is registered under the Prism Central.  If not you may need to register Prism Element to your Prism central server</li>
+</ol>
+<blockquote>
+<div><div class="figure">
+<img alt="../_images/ncsc-3.png" src="../_images/ncsc-3.png" />
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="create-an-as-built-guide">
+<h1>Create an As Built Guide<a class="headerlink" href="#create-an-as-built-guide" title="Permalink to this headline">¶</a></h1>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This is important lab after Nutanix cluster installation &amp; configurations are completed. One of most important deliverables is the <strong>As Built Guide</strong> documentation.</p>
+</div>
+<ol class="arabic">
+<li><p class="first">Copy and Extract the “As_Built_Documenter” from the Cluster Deployment Service Kit &amp; Choose the appropriate script for your OS:</p>
+</li>
+<li><p class="first">Windows: Nutanix_Cluster_as_Built_Windows_v3.4.zip</p>
+</li>
+<li><p class="first">Mac: Nutanix_Cluster_as_Built_Mac_v3.4.zip</p>
+</li>
+<li><p class="first">Follow instructions from the README file and execute the binary. You will be prompted for cluster <em>username</em> and <em>password</em>.</p>
+</li>
+<li><p class="first">Change to the directory where the zip file is extracted.</p>
+<p>For Windows workstations:</p>
+<div class="highlight-PowerShell notranslate"><div class="highlight"><pre><span></span><span class="n">generate_document</span><span class="p">.</span><span class="n">exe</span> <span class="n">-c</span> <span class="s2">&quot;CompanyName, Inc.&quot;</span> <span class="n">-n</span> <span class="p">&lt;</span><span class="n">Nutanix</span> <span class="n">cluster</span> <span class="n">IP</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>For Mac:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./generate_document -c <span class="s2">&quot;CompanyName, Inc.&quot;</span> -n &lt;Nutanix cluster IP&gt;
+</pre></div>
+</div>
+</li>
+<li><p class="first">Open the file generated and modify the highlighted areas using provide templates to complete your as built document</p>
+</li>
+</ol>
+<blockquote>
+<div><div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Use your company document template if applicable – this would be if you are providing the installation service in behalf of your company</p>
+</div>
+</div></blockquote>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../_sources/lab1/lab1.rst.txt"
+     rel="nofollow">Source</a>
+</div>
+      
+    </p>
+    <p>
+        &copy; Copyright 2019 Nutanix.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>
