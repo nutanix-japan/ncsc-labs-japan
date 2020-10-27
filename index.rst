@@ -60,15 +60,14 @@ What's New
 Lab Agenda
 +++++++++++
 
-Nutanix Karbon deployed kubernetes clusters come with Prometheus pre-installed and ready to use. However, Grafana is not available by default. We will go through the following steps to enable and visualize the status of the kubernetes cluster.
+NCSC Labs:
 
-- Connect to Karbon deployed kubernetes cluster
-- Explore the ``ntnx-system`` namespace for monitoring and logging resources
-- Explore available Prometheus metrics
-- Deploy Grafana in ``ntnx-system`` namespace
-- Configure prometheus as a data source in Grafana
-- Configure a custom dashboard
-- Import a pre-configured dashboard
+- Foundation
+- Using Crashcart Tool
+- 1-Click upgrade
+- Install Prism Central
+- Creating As Built Guide
+- AHV Networking 
 
 Initial Setup
 ++++++++++++++
