@@ -8,9 +8,9 @@ These commands are used to execute the same command on all the hypervisor nodes 
 - `allssh` - used to execute a command on all CVMs and
 - `hostssh`- used to execute a command on all hypervisor nodes
 
-caution::
+.. caution::
 
-	Use these commands with extreme caution as it will affect all the hypervisor and CVMs in a cluster causing data loss.
+  Use these commands with extreme caution as it will affect all the hypervisor and CVMs in a cluster causing data loss.
   You will need to understand the command before actually running it. Nutanix recommends that these are only used if you are an advanced user and can take responsibility for your actions.
 
 Some examples for ``hostssh`` commands:
