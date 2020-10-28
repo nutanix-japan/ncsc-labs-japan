@@ -18,9 +18,11 @@
 
 .. toctree::
   :maxdepth: 2
-  :caption: Appendix
-  :name: _appendix
+  :caption: Lab 3
+  :name: _lab3
   :hidden:
+
+  lab3/lab3
 
 .. toctree::
   :maxdepth: 2
