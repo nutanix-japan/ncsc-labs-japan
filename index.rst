@@ -28,7 +28,7 @@
   :name: _appendix
   :hidden:
 
-  appendix/all_host_ssh
+  appendix/command_reference
   appendix/glossary
 
 .. _getting_started:
@@ -67,7 +67,7 @@ NCSC Labs:
 - 1-Click upgrade
 - Install Prism Central
 - Creating As Built Guide
-- AHV Networking 
+- AHV Networking
 
 Initial Setup
 ++++++++++++++

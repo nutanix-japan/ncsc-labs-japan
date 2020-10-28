@@ -1,4 +1,6 @@
-_all_host_ssh:
+.. _command_reference:
+
+.. title:: Nutanix Certified Services Consultant - Command References
 
 Generic AHV/ESX and CVM Commands Reference
 +++++++++++++++++++++++++++++++++++++++++++
