@@ -10,7 +10,7 @@ In this lab we would like to show you what it takes to set your bonds from the d
 
 .. figure:: images/ncsc-4.png
 
-Changing Bond from Active/backup to balance-slb
+Changing Bond from Active/backup to `balance-slb`
 ----------------------------------------------------------------------
 
 #. ssh into one of your CVMs
@@ -51,116 +51,123 @@ Changing Bond from Active/backup to balance-slb
 
    .. note::
 
-   	You can set the network mode on all AHV hosts from a single CVM using the ``hostssh`` command (note that the cluster services need to running for this command to work)
+   	You can set the network mode on all AHV hosts from a single CVM using the ``hostssh`` command (note that the cluster services need to running for this command to work).
 
-    Test usage of ``hostssh`` command
+    See :ref:`all_host_ssh` for command reference.
 
-    .. code-block:: bash
+Setting the VLANs from command line (Optional Reference Lab)
+-------------------------------------------------------------
 
-      hostssh <command to run on AHV host>
+.. note::
 
-      hostssh uname -a  #this will return the OS version on all AHV hosts
+  This lab is important as you will need to change the VLANs when systems are in Trunked production networks this is the case with most production environments.
 
-      #the command output will look as follows:
+  It’s recommend connecting by remote console in IPMI because you may lose connection if you are SSH into the node.
 
-      # ============= 10.42.8.27 ============
-      # Linux PHX-POC008-3 4.4.77-1.el6.nutanix.20170830.301.x86_64 #1 SMP Wed Jun 26 17:05:47 UTC 2019 x86_64 x86_64 x86_64 GNU/Linux
-      # ============= 10.42.8.25 ============
-      # Linux PHX-POC008-1 4.4.77-1.el6.nutanix.20170830.301.x86_64 #1 SMP Wed Jun 26 17:05:47 UTC 2019 x86_64 x86_64 x86_64 GNU/Linux
-      # ============= 10.42.8.28 ============
-      # Linux PHX-POC008-4 4.4.77-1.el6.nutanix.20170830.301.x86_64 #1 SMP Wed Jun 26 17:05:47 UTC 2019 x86_64 x86_64 x86_64 GNU/Linux
-      # ============= 10.42.8.26 ============
-      # Linux PHX-POC008-2 4.4.77-1.el6.nutanix.20170830.301.x86_64 #1 SMP Wed Jun 26 17:05:47 UTC 2019 x86_64 x86_64 x86_64 GNU/Linux
 
-      hostssh ovs-appctl bond/show br0-up
-      # ============= 10.42.8.27 ============ << 1/4 AHV node
-      # ---- br0-up ----
-      # bond_mode: active-backup
-      # bond may use recirculation: no, Recirc-ID : -1
-      # bond-hash-basis: 0
-      # updelay: 0 ms
-      # downdelay: 0 ms
-      # lacp_status: off
-      # active slave mac: 0c:c4:7a:59:cf:cf(eth3)
-      #
-      # slave eth0: disabled
-      # 	may_enable: false
-      #
-      # slave eth1: disabled
-      # 	may_enable: false
-      #
-      # slave eth2: enabled
-      # 	may_enable: true
-      #
-      # slave eth3: enabled
-      # 	active slave
-      # 	may_enable: true
-      #
-      # ============= 10.42.8.25 ============ << 2/4 AHV node
-      # ---- br0-up ----
-      # bond_mode: active-backup
-      # bond may use recirculation: no, Recirc-ID : -1
-      # bond-hash-basis: 0
-      # updelay: 0 ms
-      # downdelay: 0 ms
-      # lacp_status: off
-      # active slave mac: 0c:c4:7a:59:d1:fd(eth3)
-      #
-      # slave eth0: disabled
-      # 	may_enable: false
-      #
-      # slave eth1: disabled
-      # 	may_enable: false
-      #
-      # slave eth2: enabled
-      # 	may_enable: true
-      #
-      # slave eth3: enabled
-      # 	active slave
-      # 	may_enable: true
-      #
-      # ============= 10.42.8.28 ============ << 3/4 AHV node
-      # ---- br0-up ----
-      # bond_mode: active-backup
-      # bond may use recirculation: no, Recirc-ID : -1
-      # bond-hash-basis: 0
-      # updelay: 0 ms
-      # downdelay: 0 ms
-      # lacp_status: off
-      # active slave mac: 0c:c4:7a:59:d3:7d(eth3)
-      #
-      # slave eth0: disabled
-      # 	may_enable: false
-      #
-      # slave eth1: disabled
-      # 	may_enable: false
-      #
-      # slave eth2: enabled
-      # 	may_enable: true
-      #
-      # slave eth3: enabled
-      # 	active slave
-      # 	may_enable: true
-      #
-      # ============= 10.42.8.26 ============ << 4/4 AHV node
-      # ---- br0-up ----
-      # bond_mode: active-backup
-      # bond may use recirculation: no, Recirc-ID : -1
-      # bond-hash-basis: 0
-      # updelay: 0 ms
-      # downdelay: 0 ms
-      # lacp_status: off
-      # active slave mac: 0c:c4:7a:59:d3:7f(eth3)
-      #
-      # slave eth0: disabled
-      # 	may_enable: false
-      #
-      # slave eth1: disabled
-      # 	may_enable: false
-      #
-      # slave eth2: enabled
-      # 	may_enable: true
-      #
-      # slave eth3: enabled
-      # 	active slave
-      # 	may_enable: true
+#. Assign port br0 to the VLAN that you want the host be on.
+
+.. code-block:: bash
+
+  root@ahv# ovs-vsctl set port br0 tag=host_vlan_tag #(w/VLAN tag for hosts.)
+
+#. Confirm VLAN tagging on port br0.
+
+.. code-block:: bash
+
+  root@ahv# ovs-vsctl list port br0
+
+#. From host console Log on to the Controller VM.
+
+.. code-block:: bash
+
+  root@host# ssh nutanix@192.168.5.254
+
+#. Assign the public interface of the Controller VM to a VLAN.
+
+.. code-block:: bash
+
+  nutanix@cvm$ change_cvm_vlan vlan_id #(w/VLAN tag for CVM)
+
+VM Snapshot Management - Local and Recovery
+------------------------------------------
+
+For this lab you will need some test virtual machines. Follow the steps to create new VM.
+
+#. Locate Windows 2012 VM and add a CDROM
+
+  Click **Update**
+
+  Click **+Add New Disk** under Disks
+
+#. Choose **CDROM**
+
+#. Power on the Windows2012 VM
+
+#. Launch Console and configure windows 2012
+
+#. Login and verify it is on the network
+
+#. Install NGT:
+
+   Click the Windows 2012 VM and choose **Manage Guest Tools**
+
+   Select all options and click **Submit**
+
+   .. figure:: images/ncsc-5.png
+
+#. From the System browse to the CDROM drive and run the installation with all defaults
+
+#. Eject CDROM
+
+#. Create two clones of this system to have more test systems
+
+Purpose: Explore the rich set of integrated data protection and disaster recovery capabilities in the Nutanix solution.
+
+#. Log into Prism
+
+#. Click on **+ Protection Domain** button > **Async DR**
+
+#. Create a protection domain with a unique name by going through the wizard
+
+#. Name the protection domain **PD-Prod**
+
+#. Choose VMs to include in the protection domain
+
+#. Choose the cloned VM you created in the last lab
+
+#. Choose “Protect Selected Entities” click Next
+
+#. Click “New Schedule” Setup a schedule for the protection domain
+
+#. Choose **Repeat every 1 day**
+
+#. Create Schedule
+
+#. Click on **close**
+
+#. Simulate a few days of snapshots by selecting the Async DR you created in table view
+
+#. Select **Take Snapshot** and hit **save** and repeat a few times.
+
+   - Hint: You may modify the VM so that you can snapshot different version of your VM
+
+   - Under “Local Snapshots” for this Protection Domain you should see a few listed
+
+We will now restore VM from Replication:
+
+#. Select the Protection Domain containing the VM snapshot
+
+#. Choose the Local Snapshot under **Local Snapshots** with the timestamp and click **Restore**
+
+#. Choose all VMs or just certain VMs that you wish to restore
+
+#. Create new entities:
+
+   - Choose to create new entity to restore to a new VM. (Prefix: Nutanix-Clone-)
+   - Look at VMs to see there are new VMs restore from your snapshots
+
+#. Overwrite Existing Entities (remember to use a clone to have a copy of your VM):
+
+   - Choose to overwrite your VM while online
+   - The VM should boot into the VM at the point in time of the snapshot.
