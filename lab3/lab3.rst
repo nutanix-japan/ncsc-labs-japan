@@ -14,7 +14,7 @@ Manually Import a ESXi Virtual Disk
 
   This is optional as tools like **Nutanix Move** will be used in most cases
 
-A Prepare the VM on the ESXi host was installed with Nutanix VirtIO drivers
+Prepare the VM on the ESXi host was installed with Nutanix VirtIO drivers
 ------------------------------------------------------------------------------------------------------------
 
 #. Add the source hypervisor host IP address to the target AHV cluster Filesystem Whitelist.

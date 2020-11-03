@@ -287,3 +287,19 @@ Recover a snapshot at Remote Site B
 
 #. From the site B look at “local snapshots”
 #. Recover one of your snapshots in Site B
+
+
+Run NCC Healthchecks
+---------------------------------------------------------------
+
+#. SSH to CVM and run the following command
+
+.. code-block:: language
+
+  ncc heath_check run_all
+
+#. NCC output logs can be found in the following path on the CVM : ``home/nutanix/data/logs/ncc-output.log``
+
+.. note::
+
+	Note how you can repeat and run individual tests.  Identify how to gather resolution steps and solutions for your Fit Check report.

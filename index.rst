@@ -16,13 +16,13 @@
 
   lab2/lab2
 
-.. toctree::
-  :maxdepth: 2
-  :caption: Lab 3
-  :name: _lab3
-  :hidden:
-
-  lab3/lab3
+.. .. toctree::
+..   :maxdepth: 2
+..   :caption: Lab 3
+..   :name: _lab3
+..   :hidden:
+..
+..   lab3/lab3
 
 .. toctree::
   :maxdepth: 2
