@@ -159,7 +159,7 @@ Overview
 
 In this exercise you will create and test a NFSv4 export, used to support clustered applications, store application data such as logging, or storing other unstructured file data commonly accessed by Linux clients.
 
-Using NFS Exports
+NFS Exports
 +++++++++++++++++
 
 Creating the Export
@@ -169,16 +169,16 @@ Creating the Export
 
 #. Fill out the following fields:
 
-　　- **Name** - logs　
-　　- **Description (Optional)** - File share for system logs
-　　- **File Server** - *Initials*\ **-Files**
-　　- **Share Path (Optional)** - Leave blank
-　　- **Max Size (Optional)** - Leave blank
-　　- **Select Protocol** - NFS
+   - **Name** - logs　
+   - **Description (Optional)** - File share for system logs
+   - **File Server** - *Initials*\ **-Files**
+   - **Share Path (Optional)** - Leave blank
+   - **Max Size (Optional)** - Leave blank
+   - **Select Protocol** - NFS
 
-　　.. figure:: images/24.png
+   .. figure:: images/24.png
 
-#. Click **Next**.
+#. Click **Next**
 
 #. Fill out the following fields:
 
@@ -189,9 +189,9 @@ Creating the Export
    - Select **+ Add exceptions**
    - **Clients with Read-Write Access** - *The first 3 octets of your cluster network*\ .* (e.g. 10.38.1.\*)
 
-  .. figure:: images/25.png
+   .. figure:: images/25.png
 
-  By default an NFS export will allow read/write access to any host that mounts the export, but this can be restricted to specific IPs or IP ranges.
+   By default an NFS export will allow read/write access to any host that mounts the export, but this can be restricted to specific IPs or IP ranges.
 
 #. Click **Next**.
 
@@ -208,11 +208,11 @@ You will first provision a CentOS VM to use as a client for your Files export.
 
 #. Fill out the following fields:
 
-　　- **Name** - *Initials*\ -NFS-Client
-　　- **Description** - CentOS VM for testing Files NFS export
-　　- **vCPU(s)** - 2
-　　- **Number of Cores per vCPU** - 1
-　　- **Memory** - 2 GiB
+   - **Name** - *Initials*\ -NFS-Client
+   - **Description** - CentOS VM for testing Files NFS export
+   - **vCPU(s)** - 2
+   - **Number of Cores per vCPU** - 1
+   - **Memory** - 2 GiB
    - Select **+ Add New Disk**
     　- **Operation** - Clone from Image Service
     　- **Image** - CentOS
