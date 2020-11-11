@@ -16,13 +16,21 @@
 
   lab2/lab2
 
-.. .. toctree::
-..   :maxdepth: 2
-..   :caption: Lab 3
-..   :name: _lab3
-..   :hidden:
-..
-..   lab3/lab3
+.. toctree::
+  :maxdepth: 2
+  :caption:  Files Labs
+  :name: _files_deploy
+  :hidden:
+
+  files_deploy/files_deploy
+
+.. toctree::
+  :maxdepth: 2
+  :caption:  Objects Labs
+  :name: _objects_deploy
+  :hidden:
+
+  objects_deploy/objects_deploy
 
 .. toctree::
   :maxdepth: 2
@@ -31,6 +39,9 @@
   :hidden:
 
   appendix/command_reference
+  appendix/dc_tools_vm
+  appendix/windows_tools_vm
+  appendix/linux_tools_vm
   appendix/glossary
 
 .. _getting_started:

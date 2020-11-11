@@ -2,7 +2,7 @@
 
 .. title:: Nutanix Certified Services Consultant - Command References
 
-Generic AHV/ESX and CVM Commands Reference
+Commands Reference
 +++++++++++++++++++++++++++++++++++++++++++
 
 These commands are used to execute the same command on all the hypervisor nodes or CVM in a Nutanix Cluster. These commands will only work if the Nutanix cluster services are up and running in all CVM(s).

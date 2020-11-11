@@ -294,12 +294,12 @@ Run NCC Healthchecks
 
 #. SSH to CVM and run the following command
 
-.. code-block:: language
+   .. code-block:: language
 
-  ncc heath_check run_all
+     ncc heath_check run_all
 
 #. NCC output logs can be found in the following path on the CVM : ``home/nutanix/data/logs/ncc-output.log``
 
-.. note::
+   .. note::
 
-	Note how you can repeat and run individual tests.  Identify how to gather resolution steps and solutions for your Fit Check report.
+   	Note how you can repeat and run individual tests.  Identify how to gather resolution steps and solutions for your Fit Check report.
