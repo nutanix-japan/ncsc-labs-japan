@@ -118,7 +118,6 @@ In this exercise you will walk through the steps of creating an Object Store.
 
   <strong><font color="red">You will not actually deploy the Object Store, but you will be able to see the workflow and how simple it is for users to deploy an Object Store.</font></strong>
 
-
 .. note::
 
   In many use cases only a single object store is required. If global namespace isolation is required, for example if a Service Provider is providing object storage to multiple customers from the same cluster, then multiple object stores can be created.
@@ -168,11 +167,11 @@ In this exercise you will walk through the steps of creating an Object Store.
 
    **Client Access IPs:** These are the endpoint IPs that the external applications will connect to. 4 static IPs are required.
 
-.. raw:: html
+   .. raw:: html
 
-  <strong><font color="red">Close the Create Object Store wizard, do NOT click Deploy.</font></strong>
+     <strong><font color="red">Close the Create Object Store wizard, do NOT click Deploy.</font></strong>
 
-.. figure:: images/objects_04.png
+   .. figure:: images/objects_04.png
 
 #. On the main Objects UI, take a note of the IP address in the **Client Used IPs** column for the existing object store, as it will be used in a future lab.
 
