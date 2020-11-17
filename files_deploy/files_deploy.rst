@@ -4,7 +4,7 @@
 .. title:: Nutanix Certified Services Consultant - Nutanix Files Deployment
 
 -------------
-Files: Deploy
+Files
 -------------
 
 *Estimated time to complete all Files labs: 1 HOUR*
@@ -150,17 +150,16 @@ Deploy Files
 
    .. figure:: images/13.png
 
-------------------------
 Files: Create NFS Export
-------------------------
+++++++++++++++++++++++++++
 
 Overview
-++++++++
+...................
 
 In this exercise you will create and test a NFSv4 export, used to support clustered applications, store application data such as logging, or storing other unstructured file data commonly accessed by Linux clients.
 
 NFS Exports
-+++++++++++++++++
+...................
 
 Creating the Export
 ...................

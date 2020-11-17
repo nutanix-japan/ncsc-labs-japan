@@ -23,29 +23,30 @@ Logon to CVM ssh console and run the following commands:
 .. code-block:: bash
 
   ssh -l nutanix <CVM IP ADDRESS>
-  acli image.create CentOS7.qcow2 container=Images image_type=kDiskImage source_url=http://10.42.194.11/workshop_staging/CentOS7.qcow2
 
-  .. note::
+  nutanix@CVM:~$ acli image.create CentOS7.qcow2 container=Images image_type=kDiskImage source_url=http://10.42.194.11/workshop_staging/CentOS7.qcow2
 
-   If the container ``Images`` does not exist in your cluster. Create it using the following commands:
+.. note::
 
-   .. code-block:: bash
+  If the container ``Images`` does not exist in your cluster. Create it using the following commands:
 
-      #Obtain your stroage pool ID by running this command
+  .. code-block:: bash
 
-      nutanix@NTNX-15SM65260061-C-CVM:10.42.x.x:~$ ncli sp ls
+      #Obtain your storage pool ID by running this command
 
-      # Id                        : 0005a9c2-82e0-d3f0-0000-0000000076ac::`11`
-      # Uuid                      : 606d0b93-03d9-4bf6-bae6-b62715d69786
-      # Name                      : default-storage-pool-30380
+   nutanix@CVM:~$ ncli sp ls
 
-      #Here `11` is your storage pool id (GUID followed by a number)
-      #Storage pool ID could different for you
+    # Id                        : 0005a9c2-82e0-d3f0-0000-0000000076ac::`11`
+    # Uuid                      : 606d0b93-03d9-4bf6-bae6-b62715d69786
+    # Name                      : default-storage-pool-30380
 
-      #Create the Images container
-      #Use storage pool ID from the previous commands
+    #Here `11` is your storage pool id (GUID:Container ID)
+    #Storage pool ID could different for you
 
-      nutanix@NTNX-15SM65260061-C-CVM:10.42.x.x:~$ ctr add sp-id=11 rf=2 enable-compression=true name=Images
+    #Create the Images container
+    #Use storage pool ID from the previous commands
+
+   nutanix@CVM:~$ ctr add sp-id=11 rf=2 enable-compression=true name=Images
 
 
 In **Prism Central** > select :fa:`bars` **> Virtual Infrastructure > VMs**, and click **Create VM**.

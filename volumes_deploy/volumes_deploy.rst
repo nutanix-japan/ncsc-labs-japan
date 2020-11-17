@@ -27,13 +27,12 @@ Core use-cases for Acropolis Volumes:
 - Bare-metal consumers
 - Exchange on vSphere (for Microsoft Support)
 
-Qualified Operating Systems
-............................
+Lab Setup
++++++++++
 
-The solution is iSCSI spec. compliant, the qualified operating systems are just those of which have been validated by QA.
+This lab requires applications provisioned as part of the :ref:`windows_tools_vm` and :ref:`linux_tools_vm`.
 
-- Microsoft Windows Server 2008 R2, 2012 R2
-- Redhat Enterprise Linux 6.0+
+If you have not yet deployed these VMs, see the linked steps above before proceeding with the lab.
 
 Configure Acropolis Block Services
 ++++++++++++++++++++++++++++++++++++++++++++
