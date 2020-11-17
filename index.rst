@@ -18,6 +18,14 @@
 
 .. toctree::
   :maxdepth: 2
+  :caption:  Volumes Labs
+  :name: _volumes_deploy
+  :hidden:
+
+  volumes_deploy/volumes_deploy
+
+.. toctree::
+  :maxdepth: 2
   :caption:  Files Labs
   :name: _files_deploy
   :hidden:
