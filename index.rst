@@ -81,7 +81,7 @@ What's New
 Lab Agenda
 +++++++++++
 
-NCSC Labs:
+NCS Labs:
 
 - Foundation
 - Using Crashcart Tool
@@ -89,6 +89,11 @@ NCSC Labs:
 - Install Prism Central
 - Creating As Built Guide
 - AHV Networking
+- VM Snapshot Management
+- Tools - NCC, As Built Document Generator, Log Collector
+- Volumes
+- Files
+- Objects
 
 Initial Setup
 ++++++++++++++
@@ -279,5 +284,5 @@ Nutanix Version Info
 ++++++++++++++++++++
 
 - **AHV Version** - AHV 20170830.337
-- **AOS Version** - 5.11.2.3
-- **PC Version** - 5.11.2.1
+- **AOS Version** - 5.17.x.x
+- **PC Version** - pc.2020.7
