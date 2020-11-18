@@ -254,4 +254,4 @@ Create an As Built Guide
 
     .. note::
 
-      Use your company document template if applicable – this would be if you are providing the installation service in behalf of your company
+     Use your company document template if applicable – this would be if you are providing the installation service in behalf of your company

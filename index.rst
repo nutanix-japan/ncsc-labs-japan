@@ -15,7 +15,7 @@
   :hidden:
 
   lab2/lab2
-
+  
 .. toctree::
   :maxdepth: 2
   :caption:  Volumes Labs

@@ -53,9 +53,9 @@ Changing Bond from Active/backup to `balance-slb`
 
    .. note::
 
-   	You can set the network mode on all AHV hosts from a single CVM using the ``hostssh`` command (note that the cluster services need to running for this command to work).
+     You can set the network mode on all AHV hosts from a single CVM using the ``hostssh`` command (note that the cluster services need to running for this command to work).
 
-    See :ref:`all_host_ssh` for command reference.
+     See :ref:`command_reference` for hostssh usage instructions.
 
 Setting the VLANs from command line (Optional Reference Lab)
 -------------------------------------------------------------
@@ -298,7 +298,7 @@ Run NCC Healthchecks
 
      ncc heath_check run_all
 
-#. NCC output logs can be found in the following path on the CVM : ``home/nutanix/data/logs/ncc-output.log``
+#. NCC output logs can be found in the following path on the CVM : ``/home/nutanix/data/logs/ncc-output.log``
 
    .. note::
 

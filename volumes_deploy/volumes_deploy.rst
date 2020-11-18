@@ -50,7 +50,7 @@ Configure Acropolis Block Services
 
     .. figure:: images/1.png
 
-Enable and Configure ABS in Prism for Windows
+Enable and Configure Volumes in Prism for Windows
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 Ensure that the *initials*-Windows_VM has access to the Network:
