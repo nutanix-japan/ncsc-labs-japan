@@ -1,4 +1,4 @@
-.. title:: Nutanix Certified Services Consultant
+.. title:: Nutanix Certified Services
 
 .. toctree::
   :maxdepth: 2
@@ -15,7 +15,7 @@
   :hidden:
 
   lab2/lab2
-  
+
 .. toctree::
   :maxdepth: 2
   :caption:  Volumes Labs
@@ -58,7 +58,7 @@
 Introduction
 ++++++++++++++
 
-Welcome to the Nutanix Certified Consultant Training Labs. These labs accompanies an instructor-led session that introduces Nutanix concepts and reinforces knowledge learned in classes.
+Welcome to the Nutanix Certified Services Training Labs. These labs accompanies an instructor-led session that introduces Nutanix concepts and reinforces knowledge learned in classes.
 
 You will be taken through a Nutanix cluster Foundation which sets up nodes and associated resources(networking, storage, etc)
 
@@ -195,21 +195,21 @@ Each cluster has a dedicated domain controller VM, **DC**, responsible for provi
    * - Administrators
      - Administrator
      - nutanix/4u
-   * - SSP Admins
-     - adminuser01-adminuser25
-     - nutanix/4u
-   * - SSP Developers
-     - devuser01-devuser25
-     - nutanix/4u
-   * - SSP Consumers
-     - consumer01-consumer25
-     - nutanix/4u
-   * - SSP Operators
-     - operator01-operator25
-     - nutanix/4u
-   * - SSP Custom
-     - custom01-custom25
-     - nutanix/4u
+   .. * - SSP Admins
+   ..   - adminuser01-adminuser25
+   ..   - nutanix/4u
+   .. * - SSP Developers
+   ..   - devuser01-devuser25
+   ..   - nutanix/4u
+   .. * - SSP Consumers
+   ..   - consumer01-consumer25
+   ..   - nutanix/4u
+   .. * - SSP Operators
+   ..   - operator01-operator25
+   ..   - nutanix/4u
+   .. * - SSP Custom
+   ..   - custom01-custom25
+   ..   - nutanix/4u
    * - Bootcamp Users
      - user01-user25
      - nutanix/4u
@@ -228,23 +228,6 @@ PHX Based Clusters:
 RTP Based Clusters:
 **Username:** RTP-POCxxx-User01 (up to RTP-POCxxx-User20), **Password:** *<Provided by Instructor>*
 
-Frame VDI
-.........
-
-Login to: https://frame.nutanix.com/x/labs
-
-**Nutanix Employees** - Use your **NUTANIXDC** credentials
-**Non-Employees** - Use **Lab Access User** Credentials
-
-Parallels VDI
-.................
-
-PHX Based Clusters Login to: https://xld-uswest1.nutanix.com
-
-RTP Based Clusters Login to: https://xld-useast1.nutanix.com
-
-**Nutanix Employees** - Use your **NUTANIXDC** credentials
-**Non-Employees** - Use **Lab Access User** Credentials
 
 Employee Pulse Secure VPN
 ..........................
@@ -274,6 +257,23 @@ For RTP:
 - **Name** - X-Labs - RTP
 - **Server URL** - xlv-useast1.nutanix.com
 
+Frame VDI
+.........
+
+Login to: https://frame.nutanix.com/x/labs
+
+**Nutanix Employees** - Use your **NUTANIXDC** credentials
+**Non-Employees** - Use **Lab Access User** Credentials
+
+Parallels VDI
+.................
+
+PHX Based Clusters Login to: https://xld-uswest1.nutanix.com
+
+RTP Based Clusters Login to: https://xld-useast1.nutanix.com
+
+**Nutanix Employees** - Use your **NUTANIXDC** credentials
+**Non-Employees** - Use **Lab Access User** Credentials
 
 Nutanix Version Info
 ++++++++++++++++++++
@@ -281,4 +281,3 @@ Nutanix Version Info
 - **AHV Version** - AHV 20170830.337
 - **AOS Version** - 5.11.2.3
 - **PC Version** - 5.11.2.1
-- **Karbon Version** - 2.1.1
