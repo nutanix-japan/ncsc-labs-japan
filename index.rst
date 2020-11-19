@@ -2,7 +2,7 @@
 
 .. toctree::
   :maxdepth: 2
-  :caption: Lab 1
+  :caption: Deployment Services
   :name: _lab1
   :hidden:
 
@@ -11,6 +11,30 @@
   volumes_deploy/volumes_deploy
   files_deploy/files_deploy
   objects_deploy/objects_deploy
+
+.. toctree::
+  :maxdepth: 2
+  :caption: Migration Services
+  :name: _lab3
+  :hidden:
+
+  lab3/lab3
+
+.. toctree::
+  :maxdepth: 2
+  :caption: Data Protection Services
+  :name: _lab4
+  :hidden:
+
+  lab4/lab4
+
+.. toctree::
+  :maxdepth: 2
+  :caption: Fit Check Services
+  :name: _lab5
+  :hidden:
+
+  lab5/lab5
 
 .. toctree::
   :maxdepth: 2

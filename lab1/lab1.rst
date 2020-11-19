@@ -1,14 +1,13 @@
 .. _lab1:
 
-.. title:: Nutanix Certified Services Consultant - Lab 1
+.. title:: Deployment Services
 
 .. note::
 
 	Due to Covid-19, Remote Installations are now being done with the majority of our customers.  This can be done in a few ways.  The remote installation workflow is different but can be simplified by manually setting the node IPs.  Because manually setting the node IPs covers a much broader situations we will be focusing on these stepsin the Labs.  Rack and stack and setting the IPMI IPs via BIOS or ipmitool commandwill have to be done by someone ahead of timein order for you to have access to these systemsremotely.Note: Theremote installation steps are also used for node models that do not have 1Gb portsor dark sites.
 
-
-Access Remote Console to System using IPMI and using the Crash Cart Tool
---------------------------------------------------------------------------
+Remote Console
++++++++++++++++
 
 #. Open a web browser to your IPMI IP: ``http://<IPMI IP>`` USE YOUR ASSIGNED NODE(S)
 
@@ -74,8 +73,8 @@ Access Remote Console to System using IPMI and using the Crash Cart Tool
      touch .node_unconfigure
      genesis restart
 
-Using the Crashcart network_configuration Command
----------------------------------------------------
+Crashcart Tool
+++++++++++++++++++++++++++++++
 
 In a remote install or deployment the IPMI was set ahead of time for remote access this command will now be use to set the HOST and CVM IP as well as Network settings.
 
@@ -95,9 +94,8 @@ In a remote install or deployment the IPMI was set ahead of time for remote acce
 
 #. You can now “exit” and close your remote console
 
-
-Running Foundation from a CVM
-------------------------------
+Foundation on CVM
+++++++++++++++++++++++++++++++
 
 #. Open a web browser to your CVM IP: ``http://<CVM IP:8000>``  use your assigned CVM's IP
 
@@ -140,8 +138,8 @@ Running Foundation from a CVM
    - User: admin
    - Password: Nutanix/4u
 
-1-Click Upgrade from version of AOS
-------------------------------------
+1-Click Upgrade
+++++++++++++++++++++++++++++++
 
 .. note::
 
@@ -161,10 +159,12 @@ Running Foundation from a CVM
 
 #.	Notice you can click **Close** and go to tasks and watch all the detailed tasks running in the background
 
-Install Foundation VM on your laptop (optional reference lab)
-------------------------------------------------------------------------
+Install Foundation VM
+++++++++++++++++++++++++++++++
 
 .. note::
+
+	This is optional lab to do on your laptop
 
   This is an important lab to understand bare-metal and we run through these steps with our Remote Labs due to network accessibility.   Use this lab as a reference lab.  When you would need to bare-metal or image a single node you will have to use Foundation VM or Portable Foundation.
 
@@ -193,7 +193,7 @@ Downloading the needed Foundation & AOS:
   **Software Only** system will come with nothing pre-installed you must to use these bare-metal steps.  In the same fashion, you can not auto-discover any of your nodes if it is part of a cluster.
 
 Install Prism Central
------------------------------
+++++++++++++++++++++++++++++++
 
 .. note::
 
@@ -213,7 +213,7 @@ Install Prism Central
 
 #.	Choose **VM Sizing** as **Small**
 
-#.	Give the Prism Central server an IP using your IP network first octets and use *X.X.X.39*  in the created native *VLAN 0*
+#.	Give the Prism Central server an IP using your IP network first octets and use *X.X.X.50-55* (available range) in the created native *Primary VLAN 0*
 
 #.	Once Prism Central server is successfully deployed (you can monitor the deployment in **Home > Tasks** Browse to the Prism Central IP and login
 
@@ -222,7 +222,7 @@ Install Prism Central
     .. figure:: images/ncsc-3.png
 
 Create an As Built Guide
------------------------------
+++++++++++++++++++++++++++++++
 
 .. note::
 

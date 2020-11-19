@@ -1,6 +1,6 @@
 .. _lab3:
 
-.. title:: Nutanix Certified Services Consultant - Lab 3
+.. title:: Deployment Services
 
 VM Migration
 +++++++++++++
