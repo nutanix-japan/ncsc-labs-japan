@@ -119,7 +119,7 @@ html_theme_options = {
 
     #Disalbe Previous and Next buttons
     'prev_next_buttons_location': None,
-    
+
     # Navigation bar title. (Default: ``project`` value)
     'navbar_title': " ",
 
@@ -180,7 +180,7 @@ html_theme_options = {
 
     # Choose Bootstrap version.
     # Values: "3" (default) or "2" (in quotes)
-    'bootstrap_version': "3",
+    'bootstrap_version': "3"
 }
 
 html_sidebars = {'**': ['localtoc.html']}
