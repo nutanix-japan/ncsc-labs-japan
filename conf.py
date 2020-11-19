@@ -119,6 +119,7 @@ html_theme_options = {
 
     #Disalbe Previous and Next buttons
     'prev_next_buttons_location': None,
+    
     # Navigation bar title. (Default: ``project`` value)
     'navbar_title': " ",
 
