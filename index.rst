@@ -7,37 +7,9 @@
   :hidden:
 
   lab1/lab1
-
-.. toctree::
-  :maxdepth: 2
-  :caption: Lab 2
-  :name: _lab2
-  :hidden:
-
   lab2/lab2
-
-.. toctree::
-  :maxdepth: 2
-  :caption:  Volumes Labs
-  :name: _volumes_deploy
-  :hidden:
-
   volumes_deploy/volumes_deploy
-
-.. toctree::
-  :maxdepth: 2
-  :caption:  Files Labs
-  :name: _files_deploy
-  :hidden:
-
   files_deploy/files_deploy
-
-.. toctree::
-  :maxdepth: 2
-  :caption:  Objects Labs
-  :name: _objects_deploy
-  :hidden:
-
   objects_deploy/objects_deploy
 
 .. toctree::
