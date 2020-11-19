@@ -1,15 +1,15 @@
-. _objects_deploy:
+.. _objects_deploy:
 
 .. title:: Nutanix Certified Services Consultant - Nutanix Objects Deployment
 
 ---------------
-Objects: Deploy
+Objects
 ---------------
 
 *The estimated time to complete this lab is 60 minutes.*
 
 Overview
-++++++++
++++++++++
 
 
 Data is growing faster than ever before, and much of the new data generated every second is unstructured. Video, backups, images, and e-mail archives are all examples of unstructured data that can cause issues at scale using traditional file and block storage solutions.
