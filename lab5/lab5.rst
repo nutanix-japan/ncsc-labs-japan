@@ -4,8 +4,12 @@
 
 .. title:: Fit Check Services
 
+
+Fit Check Services
++++++++++++++++++++
+
 Run diagnostics.py
-++++++++++++++++++++++++++++++
+------------------------------------------
 
 #. SSH to CVM
 
@@ -30,7 +34,7 @@ Run diagnostics.py
 #. Review the output
 
 Run Nutanix X-Ray
-++++++++++++++++++++++++++++++
+------------------------------------------
 
 .. note::
  If X-Ray is already deployed in your labs skip Steps 1-5
@@ -58,7 +62,7 @@ Run Nutanix X-Ray
 #. You can export the output to document and review the output.
 
 Run Nutanix Collector
-++++++++++++++++++++++++++++++
+------------------------------------------
 
 #. Download “Nutanix Collector” from Support Portal
 
@@ -71,7 +75,7 @@ Run Nutanix Collector
 #. Review the output and how it could be useful for most fit check services
 
 Run NCC Healthchecks
-++++++++++++++++++++++++++++++
+------------------------------------------
 
 #. SSH to CVM and run the following command
 
