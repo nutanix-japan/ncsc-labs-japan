@@ -111,9 +111,7 @@ html_show_sphinx = False
 # html_theme_options = {}
 # Theme options are theme-specific and customize the look and feel of a
 # theme further.
-html_theme_options = {
 
-}
 
 html_theme_options = {
 
