@@ -4,7 +4,6 @@
 
 .. title:: Fit Check Services
 
-
 Fit Check Services
 +++++++++++++++++++
 
@@ -37,7 +36,7 @@ Run Nutanix X-Ray
 ------------------------------------------
 
 .. note::
- If X-Ray is already deployed in your labs skip Steps 1-5
+ If X-Ray is already deployed in your labs skip Steps 1-9
 
 #. Go to Nutanix Support Portal (https://portal.nutanix.com/page/downloads/list)
 
