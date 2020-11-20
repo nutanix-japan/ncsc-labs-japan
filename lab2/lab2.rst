@@ -69,24 +69,24 @@ Setting the VLANs from command line (Optional Reference Lab)
 
 #. Assign port br0 to the VLAN that you want the host be on.
 
-.. code-block:: bash
+   .. code-block:: bash
 
-  root@ahv# ovs-vsctl set port br0 tag=host_vlan_tag #(w/VLAN tag for hosts.)
+    root@ahv# ovs-vsctl set port br0 tag=host_vlan_tag #(w/VLAN tag for hosts.)
 
 #. Confirm VLAN tagging on port br0.
 
-.. code-block:: bash
+   .. code-block:: bash
 
-  root@ahv# ovs-vsctl list port br0
+    root@ahv# ovs-vsctl list port br0
 
 #. From host console Log on to the Controller VM.
 
-.. code-block:: bash
+   .. code-block:: bash
 
-  root@host# ssh nutanix@192.168.5.254
+    root@host# ssh nutanix@192.168.5.254
 
 #. Assign the public interface of the Controller VM to a VLAN.
 
-.. code-block:: bash
+   .. code-block:: bash
 
-  nutanix@cvm$ change_cvm_vlan vlan_id #(w/VLAN tag for CVM)
+    nutanix@cvm$ change_cvm_vlan vlan_id #(w/VLAN tag for CVM)
