@@ -14,19 +14,19 @@
 
 .. toctree::
   :maxdepth: 1
-  :caption: Migration Services
-  :name: _move
-  :hidden:
-
-  move/move
-
-.. toctree::
-  :maxdepth: 1
   :caption: Data Protection Services
   :name: _lab4
   :hidden:
 
   lab4/lab4
+
+.. toctree::
+  :maxdepth: 1
+  :caption: Migration Services
+  :name: _move
+  :hidden:
+
+  move/move
 
 .. toctree::
   :maxdepth: 1

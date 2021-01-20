@@ -1,12 +1,12 @@
 .. Adding labels to the beginning of your lab is helpful for linking to the lab from other pages
 .. _move:
 
-----------------------------------------
+
 Migrating Workloads with Nutanix Move
----------------------------------------
+++++++++++++++++++++++++++++++++++++++++++++++++
 
 Installing Move VM
-+++++++++++++++++++
+---------------------------------------
 
 In this exercise, you will work towards deploying Nutanix Move VM on a Nutanix AHV cluster.
 
@@ -50,7 +50,7 @@ In this exercise, you will work towards deploying Nutanix Move VM on a Nutanix A
 #. Power on the VM.
 
 Setting up a Move VM
-+++++++++++++++++++++
+---------------------------------------
 
 
 #.  In your Prism Element UI, identify the IP address of the Move VM.
@@ -67,7 +67,7 @@ Setting up a Move VM
     .. figure:: images/2.png
 
 Configuring Move
-+++++++++++++++++
+---------------------------------------
 
 #.  The **Move** dashboard displays **Source Environments**, **Target Environments** and **Migration Plans**.
 #.  On the upper left side of the Move UI, click **+ Add Source**.
@@ -103,7 +103,7 @@ Configuring Move
 #. In the new **Target <your cluster name>** card, click the **ellipsis (…)** in the upper right corner and in the presented menu choose **Refresh**. This will initiate a query to update Move with the latest changes in your Nutanix target cluster.
 
 Configuring a Migration Plan
-++++++++++++++++++++++++++++
+---------------------------------------
 
 In this exercise, you will create a migration plan and initiate the migration.
 
