@@ -76,6 +76,7 @@ Configuring Move
     .. figure:: images/3.png
 
 #.  Enter the following values into the respective fields:
+
     - Source Name: **VMWare vCenter**
     - Environment Name: **Source**
     - vCenter Server: **<vCenter IP Address> Ask your instructor**
