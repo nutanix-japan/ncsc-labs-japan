@@ -15,10 +15,10 @@
 .. toctree::
   :maxdepth: 1
   :caption: Migration Services
-  :name: _lab3
+  :name: _move
   :hidden:
 
-  lab3/lab3
+  move/move
 
 .. toctree::
   :maxdepth: 1
