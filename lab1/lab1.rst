@@ -200,7 +200,7 @@ Remaining in SSH client, access Node-D CVM and execute following commands
 
  ncli cluster edit-params new-name=POCxx-D
  ncli cluster add-to-name-servers servers=10.42.196.10
- ncli user reset-password user-name='admin' password=techX2019!
+ ncli user reset-password user-name='admin' password='ask your instructor'
 
 .. note::
 
@@ -411,9 +411,9 @@ Fill in block information, choose **I will provide the IPMIs' MACs** and click *
 
  There are at least 2 methods to know MAC address remotely.
 
- Method.1 Identify MAC Address (BMC MAC address) of Nodes (A, B, C) by accessing IPMI IP for each node
+ Method 1: Identify MAC Address (BMC MAC address) of Nodes (A, B, C) by accessing IPMI IP for each node
 
- Method.2 Identify MAC Address of Nodes (A, B, C) by login AHV host with User: root, Password: *default* for each node
+ Method 2: Identify MAC Address of Nodes (A, B, C) by login AHV host with User: root, Password: *default* for each node
 
 
 Access Node A IPMI through IP 10.42.xx.33 with ADMIN/ADMIN
@@ -599,15 +599,13 @@ Fill out the following fields, leave others as default and click **Deploy**:
 
 .. figure:: images/4.png
 
-.. figure:: images/5.png
-
 .. note::
 
 After Prism Central VM is successfully deployed, open \https://*<PC VM IP>*:9440 (\https://10.42.xx.39:9440) in your browser and log in with the following credentials:
 
 - **Username** - admin
 - **Password** - default with capital N
-- change password to **techX2019!**
+- change password to **ask your instructor**
 
 Test if you can login Prism Central with the new password.
 
@@ -681,4 +679,4 @@ Create an As Built Guide
 
     .. note::
 
-     Use your company document template if applicable – this would be if you are providing the installation service in behalf of your company
+      Use your company document template if applicable – this would be if you are providing the installation service in behalf of your company
