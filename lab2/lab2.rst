@@ -83,7 +83,7 @@ Setting the VLANs from command line (Optional Reference Lab)
 
    .. code-block:: bash
 
-    root@host# ssh nutanix@192.168.5.254
+    root@ahv# ssh nutanix@192.168.5.254
 
 #. Assign the public interface of the Controller VM to a VLAN.
 

@@ -112,7 +112,6 @@ html_show_sphinx = False
 # Theme options are theme-specific and customize the look and feel of a
 # theme further.
 
-
 html_theme_options = {
 
     #Disalbe Previous and Next buttons
