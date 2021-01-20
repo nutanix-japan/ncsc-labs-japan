@@ -569,34 +569,84 @@ Open \https://*<Cluster Virtual IP >*:9440 (10.42.xx.37)in your browser and log 
 ..
 ..   **Software Only** system will come with nothing pre-installed you must to use these bare-metal steps.  In the same fashion, you can not auto-discover any of your nodes if it is part of a cluster.
 
-Install Prism Central
-++++++++++++++++++++++++++++++
+Prism Central Deploy
++++++++++++++++++++++
+
+Open \https://*<POCxx-ABC Cluster IP>*:9440 (\https://10.42.xx.37:9440) in your browser and log in with the following credentials:
+
+- **Username** - admin
+- **Password** - *ask your instructor*
+
+Navigate to **Home** page and click **Register or create new** in Prism Central widget.
+
+.. figure:: images/1.png
+
+Choose the first **Deploy** option.
+
+.. figure:: images/2.png
+
+Download the latest version and click **deploy 1-VM PC**
+
+.. figure:: images/3.png
+
+Fill out the following fields, leave others as default and click **Deploy**:
+
+- **AHV Network** - Primary
+- **IP Address** - 10.42.xx.39
+- **Subnet Mask** - 255.255.255.128
+- **Default Gateway** - 10.42.xx.1
+- **DNS Address(Es)** - 10.42.196.10
+
+.. figure:: images/4.png
+
+.. figure:: images/5.png
 
 .. note::
 
-	Setup storage container RF2 all the defaults name it **YOUR INITALS>-VMs**
+After Prism Central VM is successfully deployed, open \https://*<PC VM IP>*:9440 (\https://10.42.xx.39:9440) in your browser and log in with the following credentials:
 
-#.	From Prism Element Home dashboard you can choose **Create new** under Prism Central
+- **Username** - admin
+- **Password** - default with capital N
+- change password to **techX2019!**
 
-#.	Choose to **Deploy New Prism Central Instance**
+Test if you can login Prism Central with the new password.
 
-#.	Choose **Download** of the latest version
 
-#.	Choose to **Install Single-VM Prism Central**  and click on **Deploy 1-VM PC**
+Prism Central Registration
++++++++++++++++++++++
 
-#.	Give this VM a name *<YOUR INTIALS>-***PC**
+Go back to POCxx-ABC Cluster  (\https://10.42.xx.37:9440), navigate to **Home** page and click cluster name **POCxx-ABC** and provide a cluster data service ip **10.42.xx.38**
 
-#.	Choose the container you created **VMs**
+.. figure:: images/9.png
 
-#.	Choose **VM Sizing** as **Small**
+Click **Register or create new** in Prism Central widget.
 
-#.	Give the Prism Central server an IP using your IP network first octets and use *X.X.X.50-55* (available range) in the created native *Primary VLAN 0*
+.. figure:: images/1.png
 
-#.	Once Prism Central server is successfully deployed (you can monitor the deployment in **Home > Tasks** Browse to the Prism Central IP and login
+Choose the second **Connect** option.
 
-#.	Verify your host is registered under the Prism Central.  If not you may need to register Prism Element to your Prism central server
+.. figure:: images/2.png
 
-    .. figure:: images/ncsc-3.png
+Click **Next**
+
+.. figure:: images/6.png
+
+Fill out the following fields, leave others as default and click **Connect**:
+
+- **Prism Central IP** - 10.42.xx.39
+- **Port** - 9440
+- **Username** - admin
+- **Password** - techX2019!
+
+.. figure:: images/7.png
+
+You will see an **OK** with PC's IP in Prism Central widget.
+
+.. figure:: images/8.png
+
+.. note::
+
+  Prism Central's default password for admin *Nutanix/4u* must be changed before cluster registering PC
 
 Create an As Built Guide
 ++++++++++++++++++++++++++++++
