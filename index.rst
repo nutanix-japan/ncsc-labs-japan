@@ -18,7 +18,7 @@
   :name: _dr
   :hidden:
 
-  lab4/lab4
+  dr/dr
 
 .. toctree::
   :maxdepth: 1
