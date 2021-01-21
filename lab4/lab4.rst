@@ -5,7 +5,9 @@
 Data Protection Services
 ++++++++++++++++++++++++++++++++++++++++++++++
 
-Local Snapshot and Recovery
+We will test local snapshots and recovery of a WINDOWS 2012 VM in this lab.
+
+Prepare Source VM
 ------------------------------------------
 
 For this lab you will need some test virtual machines. Follow the steps to create new VM.
@@ -36,9 +38,9 @@ For this lab you will need some test virtual machines. Follow the steps to creat
 
 #. Eject CDROM
 
-#. Create two clones of this system to have more test systems
 
-Purpose: Explore the rich set of integrated data protection and disaster recovery capabilities in the Nutanix solution.
+Create Protection Domain(PD) and Local Snapshots
+--------------------------------------------------
 
 #. Log into Prism
 
@@ -66,9 +68,15 @@ Purpose: Explore the rich set of integrated data protection and disaster recover
 
 #. Select **Take Snapshot** and hit **save** and repeat a few times.
 
-   - Hint: You may modify the VM so that you can snapshot different version of your VM
+   .. note::
 
-   - Under “Local Snapshots” for this Protection Domain you should see a few listed
+
+    - Hint: You may modify the VM so that you can snapshot different version of your VM
+
+    - Under “Local Snapshots” for this Protection Domain you should see a few listed
+
+Restore VM from PD Snapshots
+------------------------------
 
 We will now restore VM from Replication:
 
@@ -122,9 +130,9 @@ Follow these steps to create a Remote Site to replicate to.
 
 #. Choose vStore A to VStore B.
 
-.. note::
+   .. note::
 
-You must make a remote site from your partners cluster to your cluster and they should go from vStore B to vStore A
+     You must make a remote site from your partners cluster to your cluster and they should go from vStore B to vStore A
 
 Modify your Data Protection Group
 ---------------------------------------------------------------
@@ -137,7 +145,7 @@ Modify your Data Protection Group
 
 #. Then click **Create Schedule**
 
-Take a few snapshots
+Take Snapshots
 ---------------------------------------------------------------
 
 #. Select your Protection Domain

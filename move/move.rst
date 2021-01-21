@@ -5,10 +5,15 @@
 Migrating Workloads with Nutanix Move
 ++++++++++++++++++++++++++++++++++++++++++++++++
 
+In this exercise, you will work towards deploying Nutanix Move VM on a Nutanix AHV cluster and moving VMs from a ESXi Cluster. Your instructor has prepared a ESXi cluster with VMs for each one of you and will give you access details.
+
+.. note::
+
+  Move is a .qcow2 virtual appliance, similar to other Nutanix tools. It is distributed as a .zip package and can be downloaded from the Nutanix Support Portal. The .zip package includes the .qcow2 disk image, as well as command line tools for Windows, macOS, and Linux that can be used to script the deployment and IP assignment of the Move VM.
+
+
 Installing Move VM
 ---------------------------------------
-
-In this exercise, you will work towards deploying Nutanix Move VM on a Nutanix AHV cluster.
 
 #. Login to you Prism Element
 
