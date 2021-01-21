@@ -15,7 +15,7 @@
 .. toctree::
   :maxdepth: 1
   :caption: Data Protection Services
-  :name: _lab4
+  :name: _dr
   :hidden:
 
   lab4/lab4
