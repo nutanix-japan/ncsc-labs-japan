@@ -95,4 +95,5 @@ In this exercise you will work individually to configure a protection domain to 
 #. Verify the restored VM named **Nutanix-Clone-Local-Backup-VM-<your initials>** is present.
 
    .. note::
-    The cloned restored VM will be in a powered off state.
+     
+    The cloned restored VM will be in a powered off state. You can disable network card and check if the VM boots.
