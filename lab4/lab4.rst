@@ -199,6 +199,7 @@ Scenario #2: when Site A has Failed and went down on its own and you want to bri
 #. When Site A is considered back online the Migrate button should now be able to send the latest back to Site A
 
    .. note::
+     
     If we active the DR site while the Primary site is till Active, VMs will be registered on DR site as well.
     If both the sites are active, we need to destroy the VMs and PD on one of the site hence its recommended to reach out to `support <https://www.nutanix.com/support-services/product-support/support-phone-numbers>`_ before taking any action.
 
