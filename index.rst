@@ -19,6 +19,7 @@
   :hidden:
 
   dr/dr
+  lab4/lab4
 
 .. toctree::
   :maxdepth: 1

@@ -2,7 +2,7 @@
 
 .. title:: Deployment Services
 
-Data Protection Services
+Data Protection Advanced (Optional)
 ++++++++++++++++++++++++++++++++++++++++++++++
 
 We will test local snapshots and recovery of a WINDOWS 2012 VM in this lab.
