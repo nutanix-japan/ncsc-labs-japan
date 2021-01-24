@@ -38,63 +38,63 @@ For this lab you will need some test virtual machines. Follow the steps to creat
 
 #. Eject CDROM
 
-
-Create Protection Domain(PD) and Local Snapshots
---------------------------------------------------
-
-#. Log into Prism
-
-#. Click on **+ Protection Domain** button > **Async DR**
-
-#. Create a protection domain with a unique name by going through the wizard
-
-#. Name the protection domain **PD-Prod**
-
-#. Choose VMs to include in the protection domain
-
-#. Choose the cloned VM you created in the last lab
-
-#. Choose “Protect Selected Entities” click Next
-
-#. Click “New Schedule” Setup a schedule for the protection domain
-
-#. Choose **Repeat every 1 day**
-
-#. Create Schedule
-
-#. Click on **close**
-
-#. Simulate a few days of snapshots by selecting the Async DR you created in table view
-
-#. Select **Take Snapshot** and hit **save** and repeat a few times.
-
-   .. note::
-
-
-    - Hint: You may modify the VM so that you can snapshot different version of your VM
-
-    - Under “Local Snapshots” for this Protection Domain you should see a few listed
-
-Restore VM from PD Snapshots
-------------------------------
-
-We will now restore VM from Replication:
-
-#. Select the Protection Domain containing the VM snapshot
-
-#. Choose the Local Snapshot under **Local Snapshots** with the timestamp and click **Restore**
-
-#. Choose all VMs or just certain VMs that you wish to restore
-
-#. Create new entities:
-
-   - Choose to create new entity to restore to a new VM. (Prefix: Nutanix-Clone-)
-   - Look at VMs to see there are new VMs restore from your snapshots
-
-#. Overwrite Existing Entities (remember to use a clone to have a copy of your VM):
-
-   - Choose to overwrite your VM while online
-   - The VM should boot into the VM at the point in time of the snapshot.
+.. 
+.. Create Protection Domain(PD) and Local Snapshots
+.. --------------------------------------------------
+..
+.. #. Log into Prism
+..
+.. #. Click on **+ Protection Domain** button > **Async DR**
+..
+.. #. Create a protection domain with a unique name by going through the wizard
+..
+.. #. Name the protection domain **PD-Prod**
+..
+.. #. Choose VMs to include in the protection domain
+..
+.. #. Choose the cloned VM you created in the last lab
+..
+.. #. Choose “Protect Selected Entities” click Next
+..
+.. #. Click “New Schedule” Setup a schedule for the protection domain
+..
+.. #. Choose **Repeat every 1 day**
+..
+.. #. Create Schedule
+..
+.. #. Click on **close**
+..
+.. #. Simulate a few days of snapshots by selecting the Async DR you created in table view
+..
+.. #. Select **Take Snapshot** and hit **save** and repeat a few times.
+..
+..    .. note::
+..
+..
+..     - Hint: You may modify the VM so that you can snapshot different version of your VM
+..
+..     - Under “Local Snapshots” for this Protection Domain you should see a few listed
+..
+.. Restore VM from PD Snapshots
+.. ------------------------------
+..
+.. We will now restore VM from Replication:
+..
+.. #. Select the Protection Domain containing the VM snapshot
+..
+.. #. Choose the Local Snapshot under **Local Snapshots** with the timestamp and click **Restore**
+..
+.. #. Choose all VMs or just certain VMs that you wish to restore
+..
+.. #. Create new entities:
+..
+..    - Choose to create new entity to restore to a new VM. (Prefix: Nutanix-Clone-)
+..    - Look at VMs to see there are new VMs restore from your snapshots
+..
+.. #. Overwrite Existing Entities (remember to use a clone to have a copy of your VM):
+..
+..    - Choose to overwrite your VM while online
+..    - The VM should boot into the VM at the point in time of the snapshot.
 
 Self Service Restore (SSR)
 ---------------------------
