@@ -124,7 +124,7 @@ Follow these steps to create a Remote Site to replicate to.
 
 #. Choose Capabilities **Disaster Recovery** this will allow Remote Recovery
 
-#. Enter the IP address  of your partners cluster (ask instructor for IP adderss and password) and choose **Add Site**
+#. Enter the IP address  of your partners cluster (ask instructor for IP address and password) and choose **Add Site**
 
 #. Choose Cluster to Cluster network mapping
 
