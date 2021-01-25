@@ -24,7 +24,7 @@ Logon to CVM ssh console and run the following commands:
 
   ssh -l nutanix <CVM IP ADDRESS>
 
-  nutanix@CVM:~$ acli image.create CentOS7.qcow2 container=Images image_type=kDiskImage source_url=http://10.42.194.11/workshop_staging/CentOS7.qcow2
+  nutanix@CVM:~$ acli image.create CentOS7.qcow2 container=Images image_type=kDiskImage source_url=http://10.55.251.38/workshop_staging//CentOS7.qcow2
 
 .. note::
 

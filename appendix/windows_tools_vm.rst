@@ -33,7 +33,7 @@ Logon to the bash shell of a CVM and run the following command:
 .. code-block:: bash
 
   ssh -l nutanix <CVM IP ADDRESS>
-  acli image.create WinToolsVM container=Images image_type=kDiskImage source_url=http://10.42.194.11/workshop_staging/WinToolsVM.qcow2
+  acli image.create WinToolsVM container=Images image_type=kDiskImage source_url=http://10.55.251.38/workshop_staging/WinToolsVM.qcow2
 
 .. note::
 

@@ -26,7 +26,7 @@ Installing Move VM
    - **Image Type** - Disk
    - **Storage Container** - default-container-#########
    - **From URL** -(Copy Download URL from portal.nutanix.com > Downloads >Nutanix Move)
-   - **Alternative URL** - http://10.42.194.11/workshop_staging/move-3.6.0.qcow2
+   - **Alternative URL** - http://10.55.251.38/workshop_staging/move-3.6.0.qcow2
 
 #. Once the image is ready, proceed to create Move VM
 
