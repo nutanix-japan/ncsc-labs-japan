@@ -376,7 +376,9 @@ From within the Foundation VM console, launch **Nutanix Foundation** from the de
 
 Access foundation UI via any browser at \http://*<Foundation VM IP 10.42.xx.45>*:8000/gui/index.html
 
-On the **Start** page, click **Next**.
+Choose to update foundation to version **4.6.x**.
+
+Once foundation update is finished, On the **Start** page, click **Next**.
 
 - **network** – eth0
 - **Select your hardware platform**: Autodetect
