@@ -218,7 +218,7 @@ Connect ABS disks to Linux VM:
 
     .. code-block:: bash
 
-      iscsiadm  - -mode node - -targetname <Nutanix.iqn.name.from.step.above> - -portal <DataServicesIP> - -login
+      iscsiadm  --mode node --targetname <Nutanix.iqn.name.from.step.above> --portal <DataServicesIP> --login
 
     .. figure:: images/17.png
 
@@ -226,7 +226,7 @@ Connect ABS disks to Linux VM:
 
     .. code-block:: bash
 
-      iscsiadm - -mode session - -op show
+      iscsiadm --mode session --op show
 
     .. figure:: images/28.png
 
