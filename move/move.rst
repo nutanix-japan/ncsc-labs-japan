@@ -71,6 +71,8 @@ Setting up a Move VM
 
     .. figure:: images/2.png
 
+#.  Upgrade Move VM to Version 3.7.0. This should only take a few minutes. The option will popup or go to **Settings > Upgrade** to complete this step.
+
 Configuring Move
 ---------------------------------------
 
