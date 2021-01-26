@@ -104,7 +104,7 @@ Login to Prism, navigate to the VM Dashboard, Table View, select the CentOS VM, 
 
 Login to the Linux guest VM to get the iSCSI iqn name:
 
-#.  Login to CentOS on your assigned cluster with
+#.  Login to CentOS VM on your assigned cluster with
 
     - Username - root
     - Password - nutanix/4u
