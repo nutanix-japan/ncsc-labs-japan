@@ -76,9 +76,9 @@ Setting up a Move VM
 Configuring Move
 ---------------------------------------
 
-#.  The **Move** dashboard displays **Source Environments**, **Target Environments** and **Migration Plans**.
+#.  The **Move** dashboard displays **Environments** and **Migration Plans**.
 #.  On the upper left side of the Move UI, click **+ Add Source**.
-#.  In the **Add Source Environment** dialog box, select **VMware ESXi**.
+#.  In the **+ Add Environment** dialog box, select **VMware ESXi**.
 
     .. figure:: images/3.png
 
@@ -97,10 +97,10 @@ Configuring Move
 
     .. figure:: images/5.png
 
-#.  In the left panel, click **+ Add Target** and enter the following values:
+#.  In the left panel, click **+ Add Environment** and enter the following values:
 
     - Target Name: **<your cluster name>**
-    - Nutanix Environment: **<cluster external IP address> See Cluster Configuration Guide**
+    - Nutanix Environment: **<cluster external IP address>**
     - User Name: **admin**
     - Password: **Ask your instructor**
 
