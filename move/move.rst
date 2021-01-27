@@ -77,7 +77,7 @@ Configuring Move
 ---------------------------------------
 
 #.  The **Move** dashboard displays **Environments** and **Migration Plans**.
-#.  On the upper left side of the Move UI, click **+ Add Source**.
+#.  On the upper left side of the Move UI
 #.  In the **+ Add Environment** dialog box, select **VMware ESXi**.
 
     .. figure:: images/3.png
