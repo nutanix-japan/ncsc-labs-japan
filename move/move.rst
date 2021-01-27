@@ -84,7 +84,7 @@ Configuring Move
 
 #.  Enter the following values into the respective fields:
 
-    - Source Name: **VMWare vCenter**
+    - Source Environment Type : **VMWare ESXi**
     - Environment Name: **Source**
     - vCenter Server: **<vCenter IP Address> Ask your instructor**
     - vCenter Password: **Ask your instructor**
@@ -99,7 +99,8 @@ Configuring Move
 
 #.  In the left panel, click **+ Add Environment** and enter the following values:
 
-    - Target Name: **<your cluster name>**
+    - Select Environment Type: **Nutanix AOS**
+    - Environment Name: **<your cluster name>**
     - Nutanix Environment: **<cluster external IP address>**
     - User Name: **admin**
     - Password: **Ask your instructor**
